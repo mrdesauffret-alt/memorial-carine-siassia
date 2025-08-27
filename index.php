@@ -589,7 +589,8 @@
             </div>
         </div>
         <div class="scroll-indicator">
-            <i class="fas fa-chevron-down"></i>
+            <img class="fas fa-chevron-down" src="assets/images/picture_1.jpg" alt="Souvenir 1" style="width:100%;border-radius:12px;">
+            <!-- <i class="fas fa-chevron-down"></i> -->
         </div>
     </section>
 
@@ -601,7 +602,8 @@
                 <div class="photo-grid">
                     <div class="photo-item">
                         <div class="photo-placeholder">
-                            <i class="fas fa-heart"></i>
+                            <img class="fas fa-heart" src="assets/images/picture_3.jpg" alt="Souvenir 1" style="width:100%;border-radius:12px;">
+                        <!-- <i class="fas fa-heart"></i> -->
                         </div>
                         <div class="photo-overlay">
                             <h4>Son sourire radieux</h4>
@@ -610,7 +612,7 @@
                     </div>
                     <div class="photo-item">
                         <div class="photo-placeholder">
-                            <i class="fas fa-users"></i>
+                            <img class="fas fa-heart" src="assets/images/picture_1.jpg" alt="Souvenir 1" style="width:100%;border-radius:12px;">
                         </div>
                         <div class="photo-overlay">
                             <h4>Moments en famille</h4>
@@ -619,20 +621,11 @@
                     </div>
                     <div class="photo-item">
                         <div class="photo-placeholder">
-                            <i class="fas fa-star"></i>
+                            <img class="fas fa-heart" src="assets/images/picture_2.jpg" alt="Souvenir 1" style="width:100%;border-radius:12px;">
                         </div>
                         <div class="photo-overlay">
                             <h4>Célébrations joyeuses</h4>
                             <p>Ses rires résonnent encore</p>
-                        </div>
-                    </div>
-                    <div class="photo-item">
-                        <div class="photo-placeholder">
-                            <i class="fas fa-flower"></i>
-                        </div>
-                        <div class="photo-overlay">
-                            <h4>Sa beauté naturelle</h4>
-                            <p>Intérieure et extérieure</p>
                         </div>
                     </div>
                 </div>
@@ -643,11 +636,11 @@
                 <h2><i class="fas fa-star"></i> Célébrons Sa Mémoire Ensemble</h2>
                 <p>
                     Notre chère Carine nous a quittés, mais son sourire, sa bienveillance et ses éclats de rire résonnent encore. 
-                    Rejoignez-nous pour honorer sa mémoire et partager nos plus beaux souvenirs d'elle.
+                    Rejoignez-nous pour honorer sa mémoire, que nous nous soutenions mutuellement et que nous gardions en nous la joie qu’elle a semée.
                 </p>
                 <p style="margin-top: 20px; font-style: italic; color: var(--text-secondary);">
                     <i class="fas fa-quote-left"></i> 
-                    Elle aurait voulu que nous gardions le sourire et que nous célébrions la vie qu'elle a si bien vécue.
+                    Réunissions dans la sérénité, le cœur rempli de gratitude pour la vie qu’elle a partagée avec nous.
                     <i class="fas fa-quote-right"></i>
                 </p>
                 <a href="#events" class="cta-button">
@@ -774,7 +767,7 @@
                         <blockquote>
                             "Carine avait cette capacité unique de transformer chaque moment ordinaire en souvenir extraordinaire. Son rire était contagieux et son cœur, immense."
                         </blockquote>
-                        <cite>— Un proche</cite>
+                        <cite>— Jane Rose NZONZI</cite>
                     </div>
                     
                     <div class="testimonial-card">
