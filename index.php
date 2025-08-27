@@ -3,9 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <!-- Balises Open Graph pour l’aperçu sur les réseaux sociaux -->
+    <meta property="og:title" content="🌹 Programme complet des funérailles de Carine SIASSIA – Hommage, cérémonies et recueillement">
+    <meta name="description" content="Veillée des souvenirs, cérémonie d’adieu, parcours de recueillement, témoignages, galerie photo, bougie et espace de méditation. Toutes les informations pratiques (lieux, horaires, accès, contacts) pour accompagner la famille et célébrer sa mémoire dans la sérénité et le partage.">
+    <meta property="og:image" content="https://memorial-carine-siassia.page.gd/assets/images/picture_4.jpg">
+    <meta property="og:url" content="https://memorial-carine-siassia.page.gd/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Mémorial Carine SIASSIA">
+    <meta property="og:locale" content="fr_FR">
+
+    
+    <!-- Balises Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="✨ Carine SIASSIA - Une Étoile Qui Continue de Briller">
+    <meta name="twitter:description" content="Hommage à Carine SIASSIA, partage de souvenirs, programme des cérémonies et espace de recueillement.">
+    <meta name="twitter:image" content="https://memorial-carine-siassia.page.gd/assets/images/picture_4.jpg">
+
+
+
+
     <title>✨ Carine SIASSIA - Une Étoile Qui Continue de Briller</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon (logo dans l’onglet du navigateur) -->
+    <link rel="icon" type="image/png" href="assets/images/picture_4.jpg">
     <style>
         :root {
             --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
@@ -100,7 +125,7 @@
             z-index: 2;
             max-width: 800px;
             padding: 60px 40px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.5);
             backdrop-filter: blur(20px);
             border-radius: 30px;
             border: 1px solid rgba(255, 255, 255, 0.2);
@@ -118,7 +143,7 @@
             font-size: 4.5rem;
             font-weight: 700;
             margin-bottom: 20px;
-            background: linear-gradient(45deg, #fff 0%, #f093fb 50%, #ffecd2 100%);
+            background: linear-gradient(45deg, #002855 0%, #e63946 50%, #0466c8 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             letter-spacing: -3px;
@@ -136,6 +161,7 @@
             font-weight: 300;
             margin-bottom: 30px;
             opacity: 0.9;
+            color: #002855;
             animation: fadeSlideUp 1s ease 0.5s both;
         }
 
@@ -149,6 +175,8 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
             position: relative;
             animation: fadeSlideUp 1s ease 1s both;
+            color:black;
+            font-family:bold;
         }
 
         .hero .quote::before, .hero .quote::after {
@@ -582,15 +610,15 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>✨ Carine SIASSIA</h1>
+            <h1>🌹 Programme complet des funérailles de Carine SIASSIA</h1>
             <p class="subtitle">Une Étoile Qui Continue de Briller</p>
             <div class="quote">
                 Quand une étoile s'éteint, elle continue de briller dans nos cœurs...
             </div>
         </div>
         <div class="scroll-indicator">
-            <img class="fas fa-chevron-down" src="assets/images/picture_1.jpg" alt="Souvenir 1" style="width:100%;border-radius:12px;">
-            <!-- <i class="fas fa-chevron-down"></i> -->
+            <!-- <img class="fas fa-chevron-down" src="assets/images/picture_1.jpg" alt="Souvenir 1" style="width:100%;border-radius:12px;"> -->
+            <i class="fas fa-chevron-down"></i>
         </div>
     </section>
 
@@ -661,9 +689,7 @@
                     </div>
                     <div class="description">
                         <p>Venez avec vos photos, vos anecdotes, vos playlists... Faisons de cette soirée un vrai hommage à la femme extraordinaire qu'elle était !</p>
-                        <p style="margin-top: 15px; font-weight: 600; color: var(--accent-color);">
-                            <i class="fas fa-smile"></i> Pas de larmes, que des sourires et des bons souvenirs !
-                        </p>
+                        
                     </div>
                     <div style="margin-top: 25px; padding: 20px; background: rgba(102, 126, 234, 0.1); border-radius: 15px;">
                         <h4><i class="fas fa-bus"></i> Comment venir :</h4>
@@ -767,7 +793,7 @@
                         <blockquote>
                             "Carine avait cette capacité unique de transformer chaque moment ordinaire en souvenir extraordinaire. Son rire était contagieux et son cœur, immense."
                         </blockquote>
-                        <cite>— Jane Rose NZONZI</cite>
+                        <cite>— Jane Rose</cite>
                     </div>
                     
                     <div class="testimonial-card">
@@ -997,7 +1023,7 @@
         }
 
         .testimonial-grid {
-            display: grid;
+            display: none;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
             margin-bottom: 50px;
