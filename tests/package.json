@@ -1,0 +1,39 @@
+{
+  "name": "memorial-carine-tests",
+  "version": "1.0.0",
+  "description": "Tests pour le mémorial Carine SIASSIA",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:e2e": "cypress run",
+    "test:e2e:open": "cypress open",
+    "test:api": "newman run tests/api/memorial-api.postman_collection.json",
+    "test:lighthouse": "lighthouse http://localhost/memorial-carine-siassia --output html --output-path ./reports/lighthouse-report.html",
+    "test:all": "npm run test && npm run test:e2e && npm run test:api"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/user-event": "^14.4.3",
+    "jest": "^29.5.0",
+    "jest-environment-jsdom": "^29.5.0",
+    "cypress": "^12.7.0",
+    "newman": "^6.0.0",
+    "lighthouse": "^10.4.0",
+    "axe-core": "^4.6.3",
+    "jest-axe": "^7.0.0"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "setupFilesAfterEnv": ["<rootDir>/tests/setup.js"],
+    "testMatch": [
+      "<rootDir>/tests/**/*.test.js"
+    ],
+    "collectCoverageFrom": [
+      "assets/js/**/*.js",
+      "!assets/js/vendor/**/*.js"
+    ],
+    "coverageDirectory": "coverage",
+    "coverageReporters": ["text", "lcov", "html"]
+  }
+}

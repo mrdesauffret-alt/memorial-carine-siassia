@@ -1,0 +1,628 @@
+/**
+ * Styles pour les fonctionnalités avancées
+ */
+
+/* =========================
+   Notifications
+   ========================= */
+.notification-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10000;
+    max-width: 400px;
+}
+
+.notification {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    margin-bottom: 15px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: all 0.3s ease;
+    border-left: 4px solid #667eea;
+}
+
+.notification.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.notification-success {
+    border-left-color: #10b981;
+}
+
+.notification-error {
+    border-left-color: #ef4444;
+}
+
+.notification-warning {
+    border-left-color: #f59e0b;
+}
+
+.notification-info {
+    border-left-color: #3b82f6;
+}
+
+.notification-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+}
+
+.notification-content i {
+    font-size: 1.2rem;
+}
+
+.notification-success .notification-content i {
+    color: #10b981;
+}
+
+.notification-error .notification-content i {
+    color: #ef4444;
+}
+
+.notification-warning .notification-content i {
+    color: #f59e0b;
+}
+
+.notification-info .notification-content i {
+    color: #3b82f6;
+}
+
+.notification-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #6b7280;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 15px;
+    transition: color 0.2s ease;
+}
+
+.notification-close:hover {
+    color: #374151;
+}
+
+/* =========================
+   Bougies récentes
+   ========================= */
+.recent-candles-widget {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 30px;
+    backdrop-filter: blur(10px);
+}
+
+.recent-candles-widget h4 {
+    margin: 0 0 15px 0;
+    color: var(--text-primary);
+    font-size: 1.1rem;
+}
+
+.candles-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.candle-item {
+    background: rgba(102, 126, 234, 0.1);
+    padding: 12px;
+    border-radius: 8px;
+    border-left: 3px solid var(--accent-color);
+}
+
+.candle-name {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+}
+
+.candle-time {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-top: 2px;
+}
+
+.candle-message {
+    font-style: italic;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin-top: 5px;
+}
+
+/* =========================
+   Souvenirs API
+   ========================= */
+.api-memories-container {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.api-memory-card {
+    position: relative;
+    border: 2px solid rgba(102, 126, 234, 0.2);
+}
+
+.api-memory-card::before {
+    content: 'Nouveau';
+    position: absolute;
+    top: -10px;
+    right: 15px;
+    background: var(--primary-gradient);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    z-index: 1;
+}
+
+.memory-image {
+    margin-bottom: 15px;
+}
+
+.memory-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.memory-content {
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.memory-date {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-top: 8px;
+}
+
+/* =========================
+   Formulaires améliorés
+   ========================= */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-group small {
+    display: block;
+    margin-top: 5px;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+/* =========================
+   Lightbox
+   ========================= */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.lightbox.show {
+    opacity: 1;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lightbox-image {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.lightbox-caption {
+    color: white;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 1.1rem;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.lightbox-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+}
+
+.lightbox-prev,
+.lightbox-next {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    padding: 15px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    pointer-events: all;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.lightbox-prev {
+    margin-left: -60px;
+}
+
+.lightbox-next {
+    margin-right: -60px;
+}
+
+/* =========================
+   PWA Install Banner
+   ========================= */
+.install-banner {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background: var(--primary-gradient);
+    color: white;
+    border-radius: 12px;
+    padding: 15px 20px;
+    z-index: 9999;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.install-banner.show {
+    transform: translateY(0);
+}
+
+.install-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.install-content i {
+    font-size: 1.5rem;
+}
+
+.install-content span {
+    flex: 1;
+    font-weight: 500;
+}
+
+.install-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.install-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.install-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.install-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* =========================
+   Mode sombre
+   ========================= */
+@media (prefers-color-scheme: dark) {
+    .notification {
+        background: #1f2937;
+        color: white;
+    }
+
+    .recent-candles-widget {
+        background: rgba(31, 41, 55, 0.9);
+        color: white;
+    }
+
+    .candle-item {
+        background: rgba(102, 126, 234, 0.2);
+    }
+
+    .form-group input,
+    .form-group textarea {
+        background: #374151;
+        border-color: #4b5563;
+        color: white;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+        border-color: var(--accent-color);
+        background: #4b5563;
+    }
+}
+
+/* =========================
+   Animations supplémentaires
+   ========================= */
+@keyframes sparkleFloat {
+    0% {
+        opacity: 0;
+        transform: translateY(0) scale(0.8);
+    }
+    30% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-60px) scale(1.2);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* =========================
+   Responsive
+   ========================= */
+@media (max-width: 768px) {
+    .notification-container {
+        left: 10px;
+        right: 10px;
+        top: 10px;
+    }
+
+    .recent-candles-widget {
+        margin-top: 20px;
+        padding: 15px;
+    }
+
+    .api-memories-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .lightbox-prev {
+        margin-left: -40px;
+    }
+
+    .lightbox-next {
+        margin-right: -40px;
+    }
+
+    .install-banner {
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+    }
+
+    .install-content {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .install-content span {
+        order: -1;
+    }
+}
+
+/* =========================
+   Accessibilité
+   ========================= */
+@media (prefers-reduced-motion: reduce) {
+    .notification,
+    .lightbox,
+    .install-banner {
+        transition: none;
+    }
+
+    .sparkle {
+        animation: none;
+    }
+}
+
+/* Focus visible pour l'accessibilité */
+.notification-close:focus,
+.install-btn:focus,
+.install-close:focus,
+.lightbox-close:focus,
+.lightbox-prev:focus,
+.lightbox-next:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* =========================
+   États de chargement
+   ========================= */
+.loading {
+    position: relative;
+    pointer-events: none;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid var(--accent-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* =========================
+   Améliorations visuelles
+   ========================= */
+.enhanced-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.enhanced-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.enhanced-card:hover::before {
+    left: 100%;
+}
+
+.pulse-animation {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

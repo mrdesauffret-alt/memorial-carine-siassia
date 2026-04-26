@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hors ligne - Mémorial Carine SIASSIA</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--primary-gradient);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .offline-container {
+            max-width: 500px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
+        }
+
+        .offline-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #ffffff, #f0f0f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .retry-button {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .retry-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .offline-features {
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .offline-features h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .feature-list i {
+            color: #10b981;
+            font-size: 1.2rem;
+        }
+
+        .connection-status {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .connection-status.online {
+            background: rgba(16, 185, 129, 0.8);
+        }
+
+        .connection-status.offline {
+            background: rgba(239, 68, 68, 0.8);
+        }
+
+        @media (max-width: 768px) {
+            .offline-container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .offline-icon {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="connection-status offline" id="connectionStatus">
+        <i class="fas fa-wifi"></i>
+        <span>Hors ligne</span>
+    </div>
+
+    <div class="offline-container">
+        <div class="offline-icon">
+            <i class="fas fa-wifi-slash"></i>
+        </div>
+        
+        <h1>Vous êtes hors ligne</h1>
+        
+        <p>
+            Il semble que vous n'ayez pas de connexion internet. 
+            Ne vous inquiétez pas, vous pouvez toujours consulter le mémorial de Carine.
+        </p>
+        
+        <a href="/" class="retry-button" onclick="retryConnection()">
+            <i class="fas fa-refresh"></i> Réessayer
+        </a>
+        
+        <div class="offline-features">
+            <h3>Fonctionnalités disponibles hors ligne :</h3>
+            <ul class="feature-list">
+                <li>
+                    <i class="fas fa-check"></i>
+                    <span>Consultation du mémorial</span>
+                </li>
+                <li>
+                    <i class="fas fa-check"></i>
+                    <span>Galerie de photos</span>
+                </li>
+                <li>
+                    <i class="fas fa-check"></i>
+                    <span>Programme des événements</span>
+                </li>
+                <li>
+                    <i class="fas fa-check"></i>
+                    <span>Bougie virtuelle (local)</span>
+                </li>
+                <li>
+                    <i class="fas fa-check"></i>
+                    <span>Souvenirs sauvegardés</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Gestion de la connexion
+        function updateConnectionStatus() {
+            const status = document.getElementById('connectionStatus');
+            const icon = status.querySelector('i');
+            const text = status.querySelector('span');
+            
+            if (navigator.onLine) {
+                status.className = 'connection-status online';
+                icon.className = 'fas fa-wifi';
+                text.textContent = 'En ligne';
+                
+                // Rediriger automatiquement après 2 secondes
+                setTimeout(() => {
+                    window.location.href = '/';
+                }, 2000);
+            } else {
+                status.className = 'connection-status offline';
+                icon.className = 'fas fa-wifi-slash';
+                text.textContent = 'Hors ligne';
+            }
+        }
+
+        function retryConnection() {
+            if (navigator.onLine) {
+                window.location.href = '/';
+            } else {
+                // Afficher un message
+                const button = event.target;
+                const originalText = button.innerHTML;
+                button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Vérification...';
+                
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                    if (!navigator.onLine) {
+                        alert('Connexion toujours indisponible. Vérifiez votre connexion internet.');
+                    }
+                }, 2000);
+            }
+        }
+
+        // Écouter les changements de connexion
+        window.addEventListener('online', updateConnectionStatus);
+        window.addEventListener('offline', updateConnectionStatus);
+        
+        // Vérifier l'état initial
+        updateConnectionStatus();
+        
+        // Vérifier périodiquement
+        setInterval(() => {
+            if (navigator.onLine) {
+                // Tester une requête simple
+                fetch('/', { method: 'HEAD', cache: 'no-cache' })
+                    .then(() => {
+                        updateConnectionStatus();
+                    })
+                    .catch(() => {
+                        // Connexion instable
+                    });
+            }
+        }, 5000);
+    </script>
+</body>
+</html>
